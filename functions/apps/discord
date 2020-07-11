@@ -1,13 +1,13 @@
-# Visual Studio Code
-function install_vscode {
+# Discord
+function install_discord {
 	# Variables
-	NAME="Visual Studio Code"
-	DEBFILE=code	
+	NAME="Discord"
+	DEBFILE=discord
 	# Start
 	echo_message header 'Begin '$NAME' installation'
 	# Download
 	echo_message info 'Downloading .deb file for VSCode'
-    curl -o ${DEBFILE}.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
+    curl -o discord.deb -L "https://discord.com/api/download?platform=linux&format=deb"
     echo_message info 'Successfully downloaded. Now installing...'
     superuser_do "dpkg -i ./${DEBFILE}.deb"
     # Cleanup and finish
