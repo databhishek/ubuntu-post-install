@@ -1,0 +1,17 @@
+# Visual Studio Code
+function install_vscode {
+	# Variables
+	NAME="Visual Studio Code"
+	DEBFILE=code	
+	# Start
+	echo_message header 'Begin '$NAME' installation'
+	# Download
+	echo_message info 'Downloading .deb file for VSCode'
+    curl -o ${DEBFILE}.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
+    echo_message info 'Successfully downloaded. Now installing...'
+    superuser_do "dpkg -i ./${DEBFILE}.deb"
+    # Cleanup and finish
+    rm ${DEBFILE}.deb
+    echo_message success 'Visual Studio Code installed successfully.'
+    whiptail --title "Finished" --msgbox "Installation of $NAME complete." 8 56
+}

@@ -31,6 +31,7 @@ function install_thirdparty {
 		--cancel-button "Go Back" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
 		'install_sublime_text'  'Sublime Text 3' \
+		'install_vscode'		'Visual Studio Code' \
 		3>&1 1>&2 2>&3)
 
 	# check exit status

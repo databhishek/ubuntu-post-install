@@ -31,6 +31,8 @@ function write_zshconfig {
 		--yesno "Custom config file contains the following: \n\n$(while read LINE; do echo "  "$LINE; done < $INPUT) \n\nOverwrite existing config?" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
 		--scrolltext) then
+		# setup oh-my-zsh
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 		echo_message info "Overwriting ~/.zshrc..."
 		# simply copy the list file to the aliases file
 		cp $INPUT ~/
@@ -42,7 +44,7 @@ function write_zshconfig {
 	fi
 }
 
-# Configure vim by copying 'vimrc' file to ~/.vimrc
+# Configure vim by copying 'vimrc' file to ~/.vimrc and installing Vim Plug
 function write_vimconfig {
 	# Check list
 	INPUT=$(dirname "$0")'/data/config/.vimrc'
@@ -52,12 +54,13 @@ function write_vimconfig {
 		--yesno "Custom config file contains the following: \n\n$(while read LINE; do echo "  "$LINE; done < $INPUT) \n\nOverwrite existing config?" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
 		--scrolltext) then
-		echo_message info "Overwriting ~/.vimrc..."
-		# simply copy the list file to the aliases file
-		cp $INPUT ~/
+		echo_message info "Installing Vim Plug..."
 		# Install Vim Plug
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		echo_message info "Overwriting ~/.vimrc..."
+		# simply copy the file
+		cp $INPUT ~/
 		echo_message success "Vim successfully configured."
 		whiptail --title "Finished" --msgbox "Vim successfully configured." 8 56
 		setup_dotfiles

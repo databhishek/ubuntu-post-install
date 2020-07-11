@@ -22,7 +22,7 @@
 # this program; if not, see <https://www.gnu.org/licenses/gpl-3.0.txt>
 
 # tab width
-tabs 4
+tabs 2
 clear
 
 # Title of script set
@@ -42,11 +42,11 @@ function main {
 		'install_favs'          'Install preferred applications' \
 		'install_favs_dev'      'Install preferred development tools' \
 		'install_favs_utils'    'Install preferred utilities' \
-		'install_gnome'         'Install preferred GNOME software' \
+		'install_gnome'         'Install GNOME extensions' \
 		'install_codecs'        'Install multimedia codecs' \
 		'install_fonts'         'Install additional fonts' \
 		'install_snap_apps'     'Install Snap applications' \
-		'install_flatpak_apps'  'Install Flatpak applications' \
+		# 'install_flatpak_apps'  'Install Flatpak applications' \
 		'install_thirdparty'    'Install third-party applications' \
 		'setup_dotfiles'        'Configure dotfiles' \
 		'system_configure'      'Configure system' \

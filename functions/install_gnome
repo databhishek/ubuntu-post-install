@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Disable Workspace Switch Animations
+# Disable Workspace Switch Popup
+# Disconnect Wifi
+# Dynamic Panel Transparency
+# Horizontal Workspaces
+# NoAnnoyance v2
+# Workspace Indicator
+
 # Install GNOME Shell Extensions
 function install_shell_extensions {
 	# Update the list of packages in 'data/gnome-shell-extensions.list' to suit your preferences

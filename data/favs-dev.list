@@ -1,6 +1,7 @@
 git
+zsh
 nodejs
 npm
-code
-neovim
 vim
+neovim
+golang-go

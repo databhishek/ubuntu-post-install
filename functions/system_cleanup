@@ -40,6 +40,7 @@ function purge_unused {
 		system_cleanup
 	fi
 }
+
 # Remove pre-installed apps
 function purge_snaps {
 	NAME="Unused Pre-installed Snaps"
