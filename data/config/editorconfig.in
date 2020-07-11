@@ -14,20 +14,10 @@ end_of_line = lf
 insert_final_newline = true
 
 # indent style
-indent_style = space
+indent_style = tab 
 indent_size = 2
 charset = utf-8
 trim_trailing_whitespace = true
-
-
-# Python
-[*.py]
-indent_style = space
-indent_size = 4
-
-# Makefile
-[Makefile]
-indent_style = tab
 
 # Markdown
 [*.md]
